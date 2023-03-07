@@ -1,0 +1,21 @@
+<h1>Pokemons</h1>
+<div>
+  <label>Type:</label>
+  <select (change)="onTypeChange($event)">
+    <option *ngFor="let type of types" [value]="type" [selected]="type === 'fire'">{{type}}</option>
+  </select>
+</div>
+<table #pokemonTable>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pokemon of pokemons; let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{pokemon.pokemon.name}}</td>
+    </tr>
+  </tbody>
+</table>
